@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true">
+
+    <!--TextView, Email address label-->
+    <TextView
+        android:id="@+id/addressText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@color/black"
+        android:text="@string/address"/>
+
+    <!--EditText, email address input-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addressName"
+        android:layout_below="@id/addressText"/>
+
+    <!--TextView, Text label-->
+    <TextView
+        android:id="@+id/mailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@color/black"
+        android:text="@string/text"
+        android:layout_below="@id/addressName"/>
+
+    <!--ScrollView, can scroll written message up and down-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/scrollView"
+        android:layout_below="@id/mailText">
+
+        <!--EditText, text input-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mailContent"/>
+
+    </ScrollView>
+
+
+    <!--RelativeLayout, groups buttons together-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scrollView"
+        android:gravity="center_horizontal">
+
+        <!--Clear button-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/clearBtn"
+            android:textColor="@color/black"
+            android:text="@string/clear"/>
+
+        <!--Send button-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sendBtn"
+            android:layout_toRightOf="@id/clearBtn"
+            android:textColor="@color/black"
+            android:text="@string/send"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
